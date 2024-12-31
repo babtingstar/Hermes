@@ -16,6 +16,7 @@ import java.util.Date;
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int purchase_reg_num;
     private int purchase_product_reg_num;
     private String purchase_order_id;
     private int purchase_product_size;

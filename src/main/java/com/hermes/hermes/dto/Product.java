@@ -16,6 +16,7 @@ import java.util.Date;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int product_reg_num;
     private String product_name;
     private int product_price;
     private String product_description;

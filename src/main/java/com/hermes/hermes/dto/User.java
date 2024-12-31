@@ -13,6 +13,7 @@ import lombok.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int user_reg_num;
     private String user_id;
     private String user_pw;
     private String user_history;
