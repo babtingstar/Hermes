@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hermes.hermes.mapper.UserMapper">
-
-    <select id="My_Page_Current_User_Info">
+<mapper namespace="com.hermes.hermes.mapper.My_Page_Mapper">
+    <select id="My_Page_Get_User_info"> <!-- 현재 세션에 로그인한 유저의 user_id와 user_name 을 표기-->
         SELECT *
-        FROM USERPROFILE
-    </select>
+        FROM User
+        Where user_name = #{user_name}
 
+    </select>
 </mapper>

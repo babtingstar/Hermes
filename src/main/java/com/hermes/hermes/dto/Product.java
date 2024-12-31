@@ -1,21 +1,25 @@
 package com.hermes.hermes.dto;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.sql.Blob;
-@AllArgsConstructor    // 필수 생성자
-@NoArgsConstructor     // 기본생성자
-@Setter                // setter 줄임말로 사용
-@Getter                // getter 줄임말로 사용
-@ToString             //toString 줄임말로 사용
+import java.util.Date;
 
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
+@ToString
 public class Product {
-    private int product_reg_num;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String product_name;
     private int product_price;
     private String product_description;
-    private Blob product_image;
+    private String product_image_path;
     private String product_category;
     private int product_size;
 }

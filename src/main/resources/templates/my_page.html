@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes - My Page</title>
+    <title>Hermes</title>
     <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
-<th:block th:replace="header :: header"></th:block>
 
+    <div class = "my_page_container">
+        <th:block th:replace="layout/header :: header"></th:block>
+        <div class = "my_page_user_information"> <!-- 현재 로그인한 유저 정보 보여주는 div -->
+            <h3>아이디</h3>
+            <p th:text = "${user.user_id}"></p>
+            <h3>이름</h3>
+            <p th:text = "${user.user_name}"></p>
+        </div>
 
-<div class="MY_Page-container">
-
-
-    <h1>회원 정보 보기</h1>
-
-
-    <div class="MY_Page_Current_User_Info"> <!-- 현재 로그인한 유저 정보 표시하는 영역 -->
-        <!-- 현재 유저 정보 받아오기(임시) -->
-
-        <a th:text="${user.user_id}"></a> <!-- 현재 로그인한 유저 id 표시 -->
-        <a th:text="${user.user_name}"></a> <!-- 현재 로그인한 유저 이름 표시 -->
+        <div class="my_page_user_purchase_history"> <!-- 현재 로그인한 유저 구매이력 보여주는 div -->
+<!--            <table>-->
+<!--                <tr th:each="  u   : ${users}     ">-->
+<!--                    <td th:text="${u.userId}"></td>-->
+<!--                    <td th:text="${u.username}"></td>-->
+<!--                    <td th:text="${u.email}"></td>-->
+<!--                    <td th:text="${u.birthdate}"></td>-->
+<!--                    <td th:text="${u.accountBalance}"></td>-->
+<!--                    <td th:text="${u.gender}"></td>-->
+<!--                    <td th:text="${u.hobbies}"></td>-->
+<!--                </tr>-->
+<!--            </table>-->
+        </div>
+        <th:block th:replace="layout/footer :: footer"></th:block>
     </div>
-
-    <h1>구매 기록 보기</h1>
-
-
-    <div class="My_Page_Current_User_History"> <!-- 현재 로그인한 유저 구매 기록 표시하는 영역-->
-<!--        <a th:text="${user.history}"></a>  현재 로그인한유저 구매 기록 표시 -->
-    </div>
-
-
-</div>
-<th:block th:replace="footer :: footer"></th:block>
-
 
 </body>
 </html>
