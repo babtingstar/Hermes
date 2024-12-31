@@ -2,7 +2,6 @@ package com.hermes.hermes.controller;
 
 import com.hermes.hermes.dto.User;
 import com.hermes.hermes.mapper.MyPageMapper;
-import com.hermes.hermes.service.MyPageService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,8 +26,10 @@ public class MyPageController {
         Object loggedInUser = session.getAttribute("loggedInUser");
         if (loggedInUser != null) {
             model.addAttribute("user", loggedInUser);
+        } else {
+            model.addAttribute("user", new User(1, "user1", "pw1", null, "answer1", "username"));
         }
-        return "my_page";
+        return "mypage";
     }
 
 }

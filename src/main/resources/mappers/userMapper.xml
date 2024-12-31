@@ -3,5 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hermes.hermes.mapper.MyPageMapper">
-
+<select id="myPageService_examp">
+    select *
+    from USER
+    where user_id = #{user_id}
+</select>
 </mapper>
