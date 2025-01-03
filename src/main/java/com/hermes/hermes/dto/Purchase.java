@@ -21,8 +21,7 @@ public class Purchase {
     private String purchase_order_id;
     private int purchase_product_size;
     private String purchase_user_id;
-    private String purchase_date;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date purchase_time;
+    private String purchase_date;
     private String purchase_status;
 }

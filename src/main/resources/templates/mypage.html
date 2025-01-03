@@ -8,40 +8,30 @@
 </head>
 <body>
 
-    <div class = "my_page_container">
-        <th:block th:replace="layout/header :: header"></th:block>
-        <div class = "my_page_user_information"> <!-- 현재 로그인한 유저 정보 보여주는 div -->
-            <h3>아이디</h3>
-            <p th:text = "${user.user_id}"></p>
-            <h3>이름</h3>
-            <p th:text = "${user.user_name}"></p>
-        </div>
-
-        <div class="my_page_user_purchase_history"> <!-- 현재 로그인한 유저 구매이력 보여주는 div -->
-
-            // 1. purchaselist 전부 받아와
-
-            // 2. if(list.purchase_user_id = user.user_id) td th : text =
-            ${eachlist.purchase product reg num / order id / product size / purchase time}
-
-            // 3.
-
-<!--            <table>-->
-<!--                <tr th:each="  u   : ${users}     ">-->
-<!--                    <td th:text="${u.userId}"></td>-->
-<!--                    <td th:text="${u.username}"></td>-->
-<!--                    <td th:text="${u.email}"></td>-->
-<!--                    <td th:text="${u.birthdate}"></td>-->
-<!--                    <td th:text="${u.accountBalance}"></td>-->
-<!--                    <td th:text="${u.gender}"></td>-->
-<!--                    <td th:text="${u.hobbies}"></td>-->
-<!--                </tr>-->
-<!--            </table>-->
-
-
-        </div>
-        <th:block th:replace="layout/footer :: footer"></th:block>
+<div class="my_page_container">
+    <th:block th:replace="layout/header :: header"></th:block>
+    <div class="my_page_user_information"> <!-- 현재 로그인한 유저 정보 보여주는 div -->
+        <h3>아이디</h3>
+        <p th:text="${user.user_id}"></p>
+        <h3>이름</h3>
+        <p th:text="${user.user_name}"></p>
     </div>
+
+    <div class="my_page_user_purchase_history"> <!-- 현재 로그인한 유저 구매이력 보여주는 div -->
+        <h3>구매 내역</h3>
+        <table>
+            <tr th:each="  p   : ${purchases}     ">
+                <td th:text="${p.purchase_product_reg_num}"></td>
+                <td th:text="${p.purchase_order_id}"></td>
+                <td th:text="${p.purchase_product_size}"></td>
+                <td th:text="${p.purchase_date}"></td>
+                <td th:text="${p.purchase_status}"></td>
+            </tr>
+        </table>
+
+    </div>
+    <th:block th:replace="layout/footer :: footer"></th:block>
+</div>
 
 </body>
 </html>
