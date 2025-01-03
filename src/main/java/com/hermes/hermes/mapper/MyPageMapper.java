@@ -13,6 +13,6 @@ public interface MyPageMapper {
     List<Purchase> myPageService_getUserPurchase(String user_id);
 
     // 세션에서 유저 User 객체 받아와서 user_id 가 일치하는 User 정보 수정하기
-    void myPage_infoCorrection(String user_id, String answer, String password);
+    void myPage_infoCorrection();
 }
 

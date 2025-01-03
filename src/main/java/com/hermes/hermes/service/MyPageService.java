@@ -14,9 +14,11 @@ public interface MyPageService {
 
     // 세션에서 User 받아와서 user_id 가 일치하는 User 정보 수정하기
     void myPage_infoCorrection(
+            int user_reg_num,
             String user_id,
             String user_pw,
-            String user_verification_answer
-    );
-
+            String user_history,
+            String user_verification_answer,
+            String user_name
+            );
 }

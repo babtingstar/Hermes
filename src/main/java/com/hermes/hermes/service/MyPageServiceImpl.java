@@ -34,14 +34,24 @@ public class MyPageServiceImpl implements MyPageService {
     }
 
     @Override
-    public void myPage_infoCorrection(int user_reg_num, String user_id, String user_pw, String user_history, String user_verification_answer, String user_name) {
-        User user = new User();
-        user.setUser_id(user_id);
-        user.setUser_pw(user_pw);
-        user.setUser_history(user_history);
-        user.setUser_verification_answer(user_verification_answer);
-        user.setUser_name(user_name);
-        myPageMapper.myPage_infoCorrection(user);
+    public void myPage_infoCorrection(
+            int user_reg_num,
+            String user_id,
+            String user_pw,
+            String user_history,
+            String user_verification_answer,
+            String user_name) {
+
+            User user = new User();
+            user.setUser_reg_num(user_reg_num);
+            user.setUser_id(user_id);
+            user.setUser_pw(user_pw);
+            user.setUser_history(user_history);
+            user.setUser_verification_answer(user_verification_answer);
+            user.setUser_name(user_name);
+
+            myPageMapper.myPage_infoCorrection();
     }
+
 
 }

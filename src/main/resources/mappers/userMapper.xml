@@ -12,7 +12,7 @@
 
     <update id="myPage_infoCorrection">
         update USER
-        SET USER_VERIFICATION_ANSWER = #{answer}, USER_PW = #{password}
+        SET USER_VERIFICATION_ANSWER = #{user_verification_answer}, USER_PW = #{user_pw}
         WHERE USER_ID = #{user_id}
     </update>
 </mapper>
